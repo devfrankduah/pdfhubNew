@@ -13,9 +13,7 @@ if (!isset($user_id)) {
 if (isset($_POST['add_to_cart'])) {
 
    $resources_name = $_POST['resources_name'];
-   // $product_price = $_POST['product_price'];
    $resources_item = $_POST['resources_item'];
-   // $product_quantity = $_POST['product_quantity'];
 
    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `selected` WHERE name = '$resources_name' AND user_id = '$user_id'") or die('query failed');
 
@@ -69,9 +67,9 @@ if (isset($_POST['add_to_cart'])) {
             <form action="" method="post" class="box">
                 <img class="image" src="resources/<?php echo $fetch_resources['item']; ?>" alt="">
                 <div class="name"><?php echo $fetch_resources['name']; ?></div>
-                <input type="hidden" name="product_name" value="<?php echo $fetch_resources['name']; ?>">
-                <input type="hidden" name="product_image" value="<?php echo $fetch_resources['item']; ?>">
-                <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+                <input type="hidden" name="resources_name" value="<?php echo $fetch_resources['name']; ?>">
+                <input type="hidden" name="resources_item" value="<?php echo $fetch_resources['item']; ?>">
+                <input type="submit" value="add resource" name="add_to_cart" class="btn">
             </form>
             <?php
             }

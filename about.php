@@ -7,7 +7,7 @@ session_start();
 $user_id = $_SESSION['user_id'];
 
 if (!isset($user_id)) {
-   header('location:login.php');
+    header('location:login.php');
 }
 
 ?>
@@ -35,7 +35,7 @@ if (!isset($user_id)) {
 
     <div class="heading">
         <h3>about us</h3>
-        <p> <a href="home.php">home</a> / about </p>
+        <p> <a href="home.php">Home</a> / About </p>
     </div>
 
     <section class="about">
@@ -47,12 +47,22 @@ if (!isset($user_id)) {
             </div>
 
             <div class="content">
-                <h3>why choose us?</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatibus aut hic molestias,
-                    reiciendis natus fuga, cumque excepturi veniam ratione iure. Excepturi fugiat placeat iusto facere
-                    id officia assumenda temporibus?</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quos enim minima ipsa dicta officia
-                    corporis ratione saepe sed adipisci?</p>
+                <!-- <h3>why choose us?</h3> -->
+                <p>Welcome to the School of Engineering Sciences at University of Ghana. The School of Engineering
+                    Sciences was established as the Faculty of Engineering Sciences (FES) in the 2003/2004 Academic Year
+                    and welcomed its pioneering batch of 31 students, comprising 26 male and 5 females in August 2004.
+                    FES attained its current status as the School of Engineering Sciences (SES) when the University
+                    adopted the Collegiate System of Governance in 2014.</p>
+                <p>The original mandate of the School was:
+
+                    1. to expand the engineering capacity of Ghana’s public universities,
+
+                    2. to help expand and diversify the University’s curricula,
+
+                    3. to create more opportunities for the increasing number of science students and
+
+                    4. to provide human resources in the selected disciplines and emerging areas of Ghana’s economy for
+                    research and industrial application.</p>
                 <a href="contact.php" class="btn">contact us</a>
             </div>
 
@@ -60,7 +70,7 @@ if (!isset($user_id)) {
 
     </section>
 
-    <section class="reviews">
+    <!-- <section class="reviews">
 
         <h1 class="title">client's reviews</h1>
 
@@ -152,13 +162,13 @@ if (!isset($user_id)) {
 
         </div>
 
-    </section>
+    </section> -->
 
-    <section class="authors">
+    <!-- <section class="authors">
 
         <h1 class="title">greate authors</h1>
 
-        <div class="box-container">
+        <!-- <div class="box-container">
 
             <div class="box">
                 <img src="images/author-1.jpg" alt="">
@@ -226,10 +236,10 @@ if (!isset($user_id)) {
                 <h3>john deo</h3>
             </div>
 
-        </div>
+        </div> -->
 
     </section>
-
+    -->
 
 
 

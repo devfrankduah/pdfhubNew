@@ -6,26 +6,25 @@ session_start();
 
 $user_id = $_SESSION['user_id'];
 
-if(!isset($user_id)){
-   header('location:login.php');
+if (!isset($user_id)) {
+    header('location:login.php');
 }
 
-if(isset($_POST['add_to_cart'])){
+if (isset($_POST['add_to_cart'])) {
 
-   $resources_name = $_POST['resources_name'];
-//    $product_price = $_POST['product_price'];
-   $resources_item = $_POST['resources_item'];
-//    $product_quantity = $_POST['product_quantity'];
+    $resources_name = $_POST['resources_name'];
+    //    $product_price = $_POST['product_price'];
+    $resources_item = $_POST['resources_item'];
+    //    $product_quantity = $_POST['product_quantity'];
 
-   $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `selected` WHERE name = '$resources_name' AND user_id = '$user_id'") or die('query failed');
+    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `selected` WHERE name = '$resources_name' AND user_id = '$user_id'") or die('query failed');
 
-   if(mysqli_num_rows($check_cart_numbers) > 0){
-      $message[] = 'Already selected!';
-   }else{
-      mysqli_query($conn, "INSERT INTO `selected`(user_id, name, item) VALUES('$user_id', '$resources_name', '$resources_item')") or die('query failed');
-      $message[] = 'Resources Added!';
-   }
-
+    if (mysqli_num_rows($check_cart_numbers) > 0) {
+        $message[] = 'Already selected!';
+    } else {
+        mysqli_query($conn, "INSERT INTO `selected`(user_id, name, item) VALUES('$user_id', '$resources_name', '$resources_item')") or die('query failed');
+        $message[] = 'Resources Added!';
+    }
 }
 
 ?>
@@ -54,9 +53,7 @@ if(isset($_POST['add_to_cart'])){
     <section class="home">
 
         <div class="content">
-            <h3>Official Engineering School PDF website</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, quod? Reiciendis ut porro iste totam.
-            </p>
+            <h3>Official Engineering School Resource website</h3>
             <a href="about.php" class="white-btn">discover more</a>
         </div>
 
@@ -68,11 +65,11 @@ if(isset($_POST['add_to_cart'])){
 
         <div class="box-container">
 
-            <?php  
-         $select_resources = mysqli_query($conn, "SELECT * FROM `resources` LIMIT 6") or die('query failed');
-         if(mysqli_num_rows($select_resources) > 0){
-            while($fetch_resources = mysqli_fetch_assoc($select_resources)){
-      ?>
+            <?php
+            $select_resources = mysqli_query($conn, "SELECT * FROM `resources` LIMIT 6") or die('query failed');
+            if (mysqli_num_rows($select_resources) > 0) {
+                while ($fetch_resources = mysqli_fetch_assoc($select_resources)) {
+            ?>
             <form action="" method="post" class="box">
                 <img class="image" src="resources/<?php echo $fetch_resources['item']; ?>" alt="">
                 <div class="name"><?php echo $fetch_resources['name']; ?></div>
@@ -81,11 +78,11 @@ if(isset($_POST['add_to_cart'])){
                 <input type="submit" value="add to cart" name="add_to_cart" class="btn">
             </form>
             <?php
-         }
-      }else{
-         echo '<p class="empty">No books added yet!</p>';
-      }
-      ?>
+                }
+            } else {
+                echo '<p class="empty">No books added yet!</p>';
+            }
+            ?>
         </div>
 
         <div class="load-more" style="margin-top: 2rem; text-align:center">
@@ -104,8 +101,11 @@ if(isset($_POST['add_to_cart'])){
 
             <div class="content">
                 <h3>about us</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quos enim minima ipsa dicta officia
-                    corporis ratione saepe sed adipisci?</p>
+                <p>Welcome to the School of Engineering Sciences at University of Ghana. The School of Engineering
+                    Sciences was established as the Faculty of Engineering Sciences (FES) in the 2003/2004 Academic Year
+                    and welcomed its pioneering batch of 31 students, comprising 26 male and 5 females in August 2004.
+                    FES attained its current status as the School of Engineering Sciences (SES) when the University
+                    adopted the Collegiate System of Governance in 2014.</p>
                 <a href="about.php" class="btn">read more</a>
             </div>
 
@@ -117,8 +117,6 @@ if(isset($_POST['add_to_cart'])){
 
         <div class="content">
             <h3>have any questions?</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cumque exercitationem repellendus, amet
-                ullam voluptatibus?</p>
             <a href="contact.php" class="white-btn">contact us</a>
         </div>
 

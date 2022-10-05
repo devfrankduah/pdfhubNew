@@ -109,7 +109,7 @@ if(isset($_POST['update_resources'])){
             <input type="text" name="name" class="box" placeholder="Enter file name" required>
             <!-- <input type="number" min="0" name="price" class="box" placeholder="enter product price" required> -->
             <input type="file" name="item" class="box" required>
-            <input type="submit" value="add product" name="add_product" class="btn">
+            <input type="submit" value="add resource" name="add_product" class="btn">
         </form>
 
     </section>
@@ -130,7 +130,6 @@ if(isset($_POST['update_resources'])){
             <div class="box">
                 <img src="resources/<?php echo $fetch_resources['item']; ?>" alt="">
                 <div class="name"><?php echo $fetch_resources['name']; ?></div>
-                <!-- <div class="price">$<?php echo $fetch_resources['price']; ?>/-</div> -->
                 <a href="admin_products.php?update=<?php echo $fetch_resources['id']; ?>" class="option-btn">Update</a>
                 <a href="admin_products.php?delete=<?php echo $fetch_resources['id']; ?>" class="delete-btn"
                     onclick="return confirm('Delete this item?');">Delete</a>
@@ -160,8 +159,6 @@ if(isset($_POST['update_resources'])){
             <img src="resources/<?php echo $fetch_update['item']; ?>" alt="">
             <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box" required
                 placeholder="Enter file name">
-            <!-- <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box"
-                required placeholder="enter product price"> -->
             <input type="file" class="box" name="update_item">
             <input type="submit" value="update" name="update_resources" class="btn">
             <input type="reset" value="cancel" id="close-update" class="option-btn">

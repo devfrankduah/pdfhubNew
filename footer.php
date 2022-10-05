@@ -14,15 +14,14 @@
             <h3>Extra Links</h3>
             <a href="login.php">Sign In</a>
             <a href="register.php">Sign Up</a>
-            <a href="cart.php">Cart</a>
-            <a href="orders.php">Selections</a>
+            <a href="cart.php">Selections</a>
+            <a href="orders.php">Requests</a>
         </div>
 
         <div class="box">
             <h3>contact info</h3>
-            <p> <i class="fas fa-phone"></i> +233551323199 </p>
-            <p> <i class="fas fa-phone"></i> +111-222-3333 </p>
-            <p> <i class="fas fa-envelope"></i> frankduah0@gmail.com </p>
+            <p> <i class="fas fa-phone"></i> +233-(0)302-500381 </p>
+            <p> <i class="fas fa-envelope"></i> pad@ug.edu.gh </p>
             <p> <i class="fas fa-map-marker-alt"></i> Accra-Ghana </p>
         </div>
 
