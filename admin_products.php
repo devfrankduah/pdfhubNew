@@ -13,7 +13,6 @@ if(!isset($admin_id)){
 if(isset($_POST['add_product'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $price = $_POST['price'];
    $item = $_FILES['item']['name'];
    $item_size = $_FILES['item']['size'];
    $item_tmp_name = $_FILES['item']['tmp_name'];
@@ -109,8 +108,8 @@ if(isset($_POST['update_resources'])){
             <h3>Add Resources</h3>
             <input type="text" name="name" class="box" placeholder="Enter file name" required>
             <!-- <input type="number" min="0" name="price" class="box" placeholder="enter product price" required> -->
-            <input type="file" name="image" class="box" required>
-            <input type="submit" value="add product" name="add_resources" class="btn">
+            <input type="file" name="item" class="box" required>
+            <input type="submit" value="add product" name="add_product" class="btn">
         </form>
 
     </section>
